@@ -1,0 +1,52 @@
+BoxLayoutGame:
+
+
+<BoxLayoutGame>:
+    orientation: "vertical"
+    BoxLayout:
+        size_hint: 1, .3
+        BoxLayout:
+            padding: "10px", "20px", "0px", "0px"
+            Label:
+                text: text_input_name.text
+                font_name: "fonts/typewr.ttf"
+                text_size: self.size
+                halign: "right"
+                valign: "middle"
+                color: .35, .35, .35, 1
+                font_size:60
+        BoxLayout:
+            padding: "10px", "20px", "0px", "0px"
+            Label:
+                text: "`s Piano"
+                font_name: "fonts/typewr.ttf"
+                text_size: self.size
+                halign: "left"
+                valign: "middle"
+                color: .35, .35, .35, 1
+                font_size:60
+            
+        BoxLayout:
+            Label:
+                text: "Type your name here\n and press enter:"
+                color: .35, .35, .35, 1
+            TextInput:
+                id: text_input_name
+                text: root.text_input_str
+                multiline: False
+                on_text_validate: root.on_text_validate(self)
+        
+    BoxLayout:
+        padding: "10dp", "20dp", "10dp", "20dp"
+        BoxLayoutGameButtons:
+            spacing: "2dp"
+            disabled: root.button_enabled
+    BoxLayout:
+        padding: "10dp", "20dp", "10dp", "20dp"
+        BoxLayoutGameButtons:
+            spacing: "2dp"
+            disabled: root.button_enabled
+
+
+<MainWidget>:
+   
